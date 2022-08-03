@@ -19,7 +19,6 @@ ReactDOM.render(
         <Route path="/create" element={<DAppProvider><Create /></DAppProvider>} />
         <Route path="/explore" element={<DAppProvider config={{}}><Explore /></DAppProvider>} />
         <Route path="/detail" element={<DAppProvider config={{}}><NFTDetail /></DAppProvider>} />
-
       </Routes>
     </BrowserRouter>,
   document.getElementById("root")

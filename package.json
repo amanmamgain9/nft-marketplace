@@ -8,6 +8,7 @@
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "@usedapp/core": "^0.7.3",
+    "croak-wallet-sdk": "^1.0.52",
     "react": "^17.0.2",
     "react-color-extractor": "^1.1.2",
     "react-dom": "^17.0.2",
