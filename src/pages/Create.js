@@ -11,7 +11,7 @@ import { Colors } from "../constants/Colors";
 import {AiOutlineSearch} from 'react-icons/ai';
 import Header from "../components/Header";
 import { useEthers, useEtherBalance } from "@usedapp/core";
-import { croakWallet } from 'croak-wallet-sdk/wallet';
+import getGlipWallet from '../constants/croakWallet';
 import ListNFTComponent from '../components/ListNFT';
 
 
@@ -42,23 +42,14 @@ const Create = () => {
     
     useEffect(()=>{
         (async()=>{
-            console.log('amazing shittt')
-            let gg = await croakWallet.init({
-                chain:'polygon',
-                authNetwork: 'testnet',
-                clientIdentifier: '63020e1ef81e3742a278846a'
-            });
+            let croakWallet = await getGlipWallet();
             let isConnected = await croakWallet.isConnected();
-            console.log('isConnected', isConnected);
             try{
                 let userInfo = await croakWallet.getUserInfo();
                 setMyAddress(userInfo.publicAddress);
                 let fetchedNFTData = await fetchUserNFTs(
                     userInfo.publicAddress);
                 setNFTList(fetchedNFTData.data.nfts);
-
-                console.log('fetchedNFTs', fetchedNFTData.data.nfts);
-                console.log('userInfo', userInfo);
             }
             catch(e){
                 console.log(e);
@@ -92,6 +83,7 @@ const Create = () => {
     };
     
     const airdropNFT = async (tokenDatId) => {
+        let croakWallet = await getGlipWallet();
         let userInfo = await croakWallet.getUserInfo();
         const options = {
             method: 'POST',
