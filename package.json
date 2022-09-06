@@ -9,7 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "@usedapp/core": "^0.7.3",
     "axios": "^0.27.2",
-    "glip-wallet-sdk": "^1.0.73",
+    "glip-wallet-sdk": "^1.0.75",
     "ethers": "^5.7.0",
     "react": "^17.0.2",
     "react-color-extractor": "^1.1.2",

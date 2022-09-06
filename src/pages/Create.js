@@ -49,7 +49,7 @@ const Create = () => {
                 setMyAddress(userInfo.publicAddress);
                 let fetchedNFTData = await fetchUserNFTs(
                     userInfo.publicAddress);
-                setNFTList(fetchedNFTData.data.nfts);
+                setNFTList(fetchedNFTData.data.contracts);
             }
             catch(e){
                 console.log(e);

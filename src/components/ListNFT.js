@@ -22,9 +22,9 @@ const NFTItem = (props) => {
     return (
         <li>
           <div style={{display:'flex', justifyContent: 'space-around'}}>
-            <div>{props.object.token.id}</div>
-            <div>{props.object.token.name}</div>
-            <div>{props.object.token.supply}</div>
+            <div>{props.object.id}</div>
+            <div>{props.object.name}</div>
+            <div>{props.object.supply}</div>
             <div>
               <input type="text"
                      id="lname"
@@ -36,7 +36,9 @@ const NFTItem = (props) => {
               </input>
             </div>
             <div>
-              <button onClick={()=>transferNFT(inputValue)}>Transfer Yo</button>
+              <button onClick={()=>transferNFT(inputValue)}>
+                Transfer Yo
+              </button>
             </div>
           </div>
         </li>
@@ -48,13 +50,15 @@ const ListNFTComponent = (props) => {
     
     return (
         <div style={{color: 'white'}}>
-            <ul>
-                {props.nftList.map(function(object, i){
-                    return (
-                        <NFTItem object={object} key={i} />
-                    );
-                })}
-            </ul>
+          <ul>
+            {Object.keys(props.nftList).map(function(key){
+                let object = props.nftList[key]
+                console.log('object', object);
+                return (
+                    <NFTItem object={object} key={key} />
+                );
+            })}
+          </ul>
         </div>
     );    
 }
