@@ -5297,10 +5297,10 @@ gifwrap@^0.9.2:
     image-q "^1.1.1"
     omggif "^1.0.10"
 
-glip-wallet-sdk@^1.0.75:
-  version "1.0.75"
-  resolved "https://registry.yarnpkg.com/glip-wallet-sdk/-/glip-wallet-sdk-1.0.75.tgz#4e22479d8441c90e60971a811c4653b878f229d4"
-  integrity sha512-kyUrEluiLBIaFvfVLQt1b7zlo1QCA7XOp7eQnjoVmZ/hmH4v54rJMmRQfCckBp6j9ZUG6fUusRqZ0++5Dh6ggw==
+glip-wallet-sdk@^1.0.80:
+  version "1.0.80"
+  resolved "https://registry.yarnpkg.com/glip-wallet-sdk/-/glip-wallet-sdk-1.0.80.tgz#8ec13b99b3a90741492e933e3369f870d17b9453"
+  integrity sha512-ZzpHR0THx8q++HIBgxfx1KGmUg5khrN12Hdyh6CnlDD9JaNQ0Bi5r6fIF/O7+wG8nQfWcCyqspzYQvmMihQ4gA==
   dependencies:
     ethers "^5.6.8"
     process "0.11.10"
