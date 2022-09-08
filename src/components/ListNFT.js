@@ -8,25 +8,26 @@ const NFTItem = (props) => {
     const [inputValue, setInputValue] = useState('');
     
     const transferNFT = async (inputValue) => {
-        /* const tx = await erc20_rw.populateTransaction['transfer'](
-         *     inputValue,
-         *     ethers.utils.parseUnits("1"));
-         *  */
+        
+        const tx = await erc20_rw.populateTransaction['transfer'](
+            inputValue,
+            ethers.utils.parseUnits("1"));
+        
         let glipWallet = await getGlipWallet();
         let signer = await glipWallet.getSigner();
+        
         //let signedTransaction = await signer.signTransaction(tx);
+        
         console.log("signer", signer, signer.signTransaction);
         let signedTransaction = await signer.signTransaction({
-            to: '0x0000000000000000000000000000000000000000',
-            value: '0x0',
-            data: '0x0',
+            to: '0xd1c83851b44aa8EEb0b5112125cb80177CcB9A88',
+            value: '0x01',
             chainId: 137,
             nonce: 0,
-            gasPrice: 0,
-            gasLimit: 0,
+            gasPrice: 30000,
+            gasLimit: 100000000000,
             from: '0x697530603b985817C9d81154eC3eE0384123feA1'
         });
-        console.log('tx bitches', signedTransaction);
     }
     
     return (
