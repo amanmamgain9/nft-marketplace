@@ -16,7 +16,7 @@ const abi = [
 ];
 
 // This can be an address or an ENS name
-const address = "0x764a06fDdcE6b8895b6E7F9ba2874711BF31edEa";
+const address = "0x1f73f0dd3a2e3b4c63f329a6967ed54063938fc2";
 
 // Read-Only; By connecting to a Provider, allows:
 // - Any constant function
