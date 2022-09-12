@@ -1,4 +1,5 @@
 import { glipWalletSDK } from 'glip-wallet-sdk/wallet';
+
 let initializedGlipWallet = false;
 
 const getGlipWallet = async () => {
@@ -6,10 +7,11 @@ const getGlipWallet = async () => {
         return initializedGlipWallet;
     }
     await glipWalletSDK.init({
-        chain:'polygon',
+        chainId: 80001,
         authNetwork: 'cyan',
         clientIdentifier: '63020e1ef81e3742a278846a'
     });
+    initializedGlipWallet = glipWalletSDK;
     return glipWalletSDK;
 };
 
