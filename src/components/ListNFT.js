@@ -1,5 +1,6 @@
-import { erc20_rw } from "../constants/erc20_rw"
 import { ethers } from "ethers";
+import { erc721_rw } from "../constants/erc721_rw"
+
 import { useState } from "react";
 import getGlipWallet from '../constants/croakWallet';
 
@@ -8,13 +9,17 @@ const NFTItem = (props) => {
     const [inputValue, setInputValue] = useState('');
     
     const transferNFT = async (inputValue) => {
-        const tx = await erc20_rw.populateTransaction['transfer'](
-            inputValue,
-            ethers.utils.parseUnits("1"));
-        
+        inputValue = "0x6203A4a2c3c58bEA165b72012303Dbd8FF938B1b";
         let glipWallet = await getGlipWallet();
-        let signer = await glipWallet.getSigner();
+        let myAddress = (await glipWallet.getUserInfo()).publicAddress;
+        console.log('myAddress', myAddress);
+        const tx = await erc721_rw.populateTransaction['transferFrom'](
+            myAddress,
+            inputValue,
+            123
+        );
         
+        let signer = await glipWallet.getSigner();
         let signedTransaction = await signer.signTransaction(tx);
         
         /* console.log("signer", signer, signer.signTransaction);
